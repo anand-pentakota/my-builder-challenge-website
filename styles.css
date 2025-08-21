@@ -8,10 +8,11 @@ body {
     font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #232f3e;
-    background: #ffffff;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body::before {
@@ -29,22 +30,25 @@ body::before {
 }
 
 .aws-link {
-    background: #7877c6;
+    background: linear-gradient(90deg, #7f53ac 0%, #647dee 100%);
     color: white;
     padding: 12px 24px;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
+    border-radius: 30px;
+    font-weight: 600;
     font-size: 16px;
-    transition: all 0.2s ease;
+    transition: background 0.4s, transform 0.2s, box-shadow 0.3s;
     margin-top: 2rem;
     display: inline-block;
     border: none;
+    box-shadow: 0 4px 16px rgba(100, 125, 222, 0.15);
+    letter-spacing: 0.5px;
 }
 
 .aws-link:hover {
-    background: #6b6ab8;
-    transform: translateY(-1px);
+    background: linear-gradient(90deg, #647dee 0%, #7f53ac 100%);
+    transform: translateY(-4px) scale(1.04) rotate(-1deg);
+    box-shadow: 0 8px 24px rgba(100, 125, 222, 0.25);
 }
 
 main {
@@ -55,13 +59,14 @@ main {
 }
 
 .hero {
-    background: white;
-    border-radius: 8px;
+    background: linear-gradient(120deg, #fdf6e3 0%, #e0e7ff 100%);
+    border-radius: 16px;
     padding: 60px 40px;
     margin-bottom: 40px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px rgba(100, 125, 222, 0.10);
     text-align: center;
     position: relative;
+    animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero::after {
@@ -96,18 +101,26 @@ main {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #e5e7eb;
+    border: 4px solid #7f53ac;
     margin: 0 auto 20px auto;
     display: block;
+    box-shadow: 0 4px 24px rgba(127, 83, 172, 0.15);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s;
+    animation: popIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.profile-photo:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 8px 32px rgba(127, 83, 172, 0.25);
 }
 
 .fun-facts {
-    background: white;
-    border-radius: 8px;
+    background: linear-gradient(120deg, #e0ffe7 0%, #f8fafc 100%);
+    border-radius: 16px;
     padding: 40px;
     margin-bottom: 40px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px rgba(16, 185, 129, 0.10);
     position: relative;
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fun-facts::before {
@@ -138,12 +151,14 @@ main {
 }
 
 .fact-card {
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+    border: 1px solid #c7d2fe;
     padding: 24px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.4s;
     position: relative;
+    box-shadow: 0 2px 8px rgba(100, 125, 222, 0.08);
+    animation: fadeInCard 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fact-card::before {
@@ -159,8 +174,9 @@ main {
 }
 
 .fact-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px) scale(1.03) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(100, 125, 222, 0.18);
+    background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
 }
 
 .fact-card h4 {
@@ -186,12 +202,13 @@ main {
 }
 
 .aws-journey {
-    background: white;
-    border-radius: 8px;
+    background: linear-gradient(120deg, #fff7e0 0%, #f8fafc 100%);
+    border-radius: 16px;
     padding: 40px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px rgba(245, 158, 11, 0.10);
     position: relative;
+    animation: fadeInUp 1.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .aws-journey::after {
@@ -226,19 +243,70 @@ main {
 
 .cta-button {
     display: inline-block;
-    background: #7877c6;
-    color: white;
-    padding: 12px 24px;
+    background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+    color: #232f3e;
+    padding: 12px 32px;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 16px;
-    transition: all 0.2s ease;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 18px;
+    transition: background 0.4s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 16px rgba(247, 151, 30, 0.10);
+    letter-spacing: 0.5px;
 }
 
 .cta-button:hover {
-    background: #6b6ab8;
-    transform: translateY(-1px);
+    background: linear-gradient(90deg, #ffd200 0%, #f7971e 100%);
+    color: #7f53ac;
+    transform: translateY(-4px) scale(1.04) rotate(1deg);
+    box-shadow: 0 8px 24px rgba(247, 151, 30, 0.18);
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInCard {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 footer {
